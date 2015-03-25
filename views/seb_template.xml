@@ -3,7 +3,7 @@
     <data noupdate="1">
 
         <template id="seb_acquirer_button">
-            <form t-if="acquirer.seb_BANK_CERT" t-att-action="tx_url" method="post" target="_self">
+            <form t-if="acquirer.seb_BANK_CERT and tx_values.get('show_button')" t-att-action="tx_url" method="post" target="_self">
                 <t t-foreach="tx_values" t-as="f">
                     <input t-if="f.startswith('VK_')" type="hidden" t-att-name="f" t-att-value="tx_values[f]"/>
                 </t>
