@@ -23,4 +23,4 @@ class SEBPaymentAcquirer(models.Model):
 
     def seb_get_form_action_url(self, cr, uid, id, context=None):
         env = self.read(cr, uid, id, ['environment'], context=context)['environment']
-        return env == 'prod' and 'https://www.seb.ee/cgi-bin/unet3.sh/un3min.r' or 'https://pangalink.net/banklink/seb-common'
+        return env == 'prod' and 'https://www.seb.ee/cgi-bin/unet3.sh/un3min.r' or 'http://localhost:3480/banklink/seb-common'
